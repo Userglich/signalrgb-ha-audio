@@ -1,0 +1,6 @@
+{
+  "name": "Home Assistant Audio Export",
+  "version": "1.0.0",
+  "author": "you",
+  "description": "Exportiert Audio Daten (Volume, Bass, Treble) an Home Assistant"
+}
