@@ -11,12 +11,11 @@ export function update() {
 
     const audio = Engine.Audio;
 
+    // Sicherstellen, dass audio vorhanden ist
+    if (!audio) return;
+
     const payload = {
-        state: Math.round(audio.volume * 100),
-        attributes: {
-            bass: Math.round(audio.low * 100),
-            treble: Math.round(audio.high * 100)
-        }
+        state: Math.round(audio.volume * 100)
     };
 
     fetch(HA_URL, {
@@ -26,6 +25,7 @@ export function update() {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(payload)
-    }).catch(() => {});
+    })
+    .then(res => console.log("HA Response:", res.status))
+    .catch(err => console.error("HA Fetch Error:", err));
 }
-
