@@ -5,6 +5,7 @@ const HA_URL = "http://192.168.178.50:8123/api/states/input_number.pc_audio_volu
 const HA_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwMWI0ZmFmZjRjY2E0YmE4YWJmN2M3ZWUwMjA0NDYzNSIsImlhdCI6MTc2Njc3OTE0MywiZXhwIjoyMDgyMTM5MTQzfQ.v1mgnzYZCbgGyXv7SXZJtQ9qGhAULVEGBYRp6ehbaoM";
 
 export function update() {
+  console.log("update() called"); // <- Debug
     const now = Date.now();
     if (now - lastSend < INTERVAL) return;
     lastSend = now;
@@ -29,3 +30,4 @@ export function update() {
     .then(res => console.log("HA Response:", res.status))
     .catch(err => console.error("HA Fetch Error:", err));
 }
+
