@@ -1,7 +1,7 @@
 let lastSend = 0;
 const INTERVAL = 250; // ms (4x pro Sekunde)
 
-const HA_URL = "http://192.168.178.50:8123/api/states/sensor.pc_audio";
+const HA_URL = "http://192.168.178.50:8123/api/states/input_number.pc_audio_volume";
 const HA_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwMWI0ZmFmZjRjY2E0YmE4YWJmN2M3ZWUwMjA0NDYzNSIsImlhdCI6MTc2Njc3OTE0MywiZXhwIjoyMDgyMTM5MTQzfQ.v1mgnzYZCbgGyXv7SXZJtQ9qGhAULVEGBYRp6ehbaoM";
 
 export function update() {
@@ -28,3 +28,4 @@ export function update() {
         body: JSON.stringify(payload)
     }).catch(() => {});
 }
+
